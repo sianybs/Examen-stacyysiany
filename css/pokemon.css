@@ -33,4 +33,32 @@ header{
 button{
     display: flex;
 }
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card{
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.card img{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+#detalle{
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: beige;
+    border-radius: 10px;
+}
 

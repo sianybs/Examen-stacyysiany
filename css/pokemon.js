@@ -8,17 +8,18 @@ const generaciones = {
 
 const select = document.getElementById("generaciones");
 const contenido = document.getElementById("contenido");
+const detalle = document.getElementById("detalle");
 
-// Carga la primera generación al abrir la página
 cargarPokemon("primera");
 
-// Cuando cambia el select
 select.addEventListener("change", () => {
     cargarPokemon(select.value);
 });
 
 async function cargarPokemon(generacion) {
-    contenido.innerHTML = "<h2>Cargando...</h2>";
+
+    contenido.innerHTML = "Cargando...";
+    detalle.innerHTML = "";
 
     const [inicio, fin] = generaciones[generacion];
 
@@ -32,23 +33,56 @@ async function cargarPokemon(generacion) {
 
             const pokemon = await respuesta.json();
 
-            contenido.innerHTML += `
-                <div class="card" style="width: 18rem;">
-                    <img
-                        src="${pokemon.sprites.other['official-artwork'].front_default}"
-                        class="card-img-top"
-                        alt="${pokemon.name}"
-                    >
+            const tarjeta = document.createElement("div");
+            tarjeta.classList.add("card");
 
-                    <div class="card-body">
-                        <h5>${pokemon.name.toUpperCase()}</h5>
-                        <p>N.º ${pokemon.id}</p>
-                        <p>Tipo: ${pokemon.types[0].type.name}</p>
-                    </div>
+            tarjeta.innerHTML = `
+                <img
+                    src="${pokemon.sprites.other['official-artwork'].front_default}"
+                    alt="${pokemon.name}"
+                    width="180"
+                >
+
+                <div class="card-body">
+                    <h4>${pokemon.name.toUpperCase()}</h4>
+                    <p>N.º ${pokemon.id}</p>
                 </div>
             `;
+
+            tarjeta.addEventListener("click", () => {
+                mostrarDetalle(pokemon);
+            });
+
+            contenido.appendChild(tarjeta);
+
         } catch (error) {
             console.log("Error al cargar el Pokémon", i);
         }
     }
+}
+
+function mostrarDetalle(pokemon) {
+
+    const tipos = pokemon.types
+        .map(tipo => tipo.type.name)
+        .join(", ");
+
+    const habilidades = pokemon.abilities
+        .map(habilidad => habilidad.ability.name)
+        .join(", ");
+
+    detalle.innerHTML = `
+        <h2>${pokemon.name.toUpperCase()}</h2>
+
+        <img
+            src="${pokemon.sprites.other['official-artwork'].front_default}"
+            width="250"
+        >
+
+        <p><strong>Número:</strong> ${pokemon.id}</p>
+        <p><strong>Tipo:</strong> ${tipos}</p>
+        <p><strong>Altura:</strong> ${pokemon.height}</p>
+        <p><strong>Peso:</strong> ${pokemon.weight}</p>
+        <p><strong>Habilidades:</strong> ${habilidades}</p>
+    `;
 }
