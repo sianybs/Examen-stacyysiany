@@ -30,4 +30,7 @@ header{
     background-attachment: fixed; /* Evita que el fondo se corte al bajar la página */
     margin: 0;
 }
+button{
+    display: flex;
+}
 
