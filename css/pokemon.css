@@ -11,8 +11,6 @@ select,option{
 div.card{
     background-color: beige;
     border-radius: 10px;
-   
-  
 }
 .card{
      border: 2px solid #ccc; 
@@ -29,6 +27,8 @@ header{
      background: linear-gradient(135deg, #04126b 0%, #fddd24 100%);
     background-attachment: fixed; /* Evita que el fondo se corte al bajar la página */
     margin: 0;
+    text-align: center; /* Centrar el logo en el header */
+    padding: 15px 0;
 }
 button{
     display: flex;
@@ -46,6 +46,13 @@ button{
     text-align: center;
     cursor: pointer;
     padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+/* Efecto hover en las tarjetas */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-color: #04126b;
 }
 
 .card img{
@@ -60,5 +67,142 @@ button{
     padding: 20px;
     background-color: beige;
     border-radius: 10px;
+}
+
+
+#detalle {
+    display: none; 
+}
+
+
+#detalle.activo {
+    display: flex;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; 
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.detalle-modal-content {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95) translateY(10px); }
+    to { transform: scale(1) translateY(0); }
+}
+
+.detalle-header {
+    background-color: #fddd24; 
+    color: #04126b; 
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 4px solid #04126b;
+    position: relative;
+}
+
+.detalle-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.cerrar-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #04126b;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.cerrar-btn:hover {
+    transform: scale(1.2);
+}
+
+.detalle-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+@media (min-width: 576px) {
+    .detalle-body {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.detalle-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px dashed #ccc;
+}
+
+.detalle-img img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.detalle-info {
+    flex: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.detalle-info p {
+    margin: 8px 0;
+}
+
+.detalle-info h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #04126b;
+    border-bottom: 2px solid #fddd24;
+    padding-bottom: 3px;
+    font-size: 18px;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
