@@ -1,45 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-   
-   </meta>
-   <link rel="stylesheet" href="css/pokemon.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    
-    <br>
-    
-    <body>
+    <link rel="stylesheet" href="css/pokemon.css">
+</head>
 
-         <div>
-     </div>
-        <header>
-     <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" width="300">
-    <hr style="width: 2000px;"  color=" darkblue" size="5px" >
-</div>
- </header>
-<h3>Generación</h3>
+<body>
 
-<label for="generaciones">Elige una Generación:</label>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" width="300">
+        <hr color="darkblue" size="5">
+    </header>
 
-<select id="generaciones">
-    <option value="primera">Primera Generación</option>
-    <option value="segunda">Segunda Generación</option>
-    <option value="tercera">Tercera Generación</option>
-    <option value="cuarta">Cuarta Generación</option>
-    <option value="quinta">Quinta Generación</option>
-</select>
+    <h3>Generación</h3>
 
-<div id="contenido" class="content"></div>
+    <label for="generaciones">Elige una Generación:</label>
 
-<div id="detalle"></div>
+    <select id="generaciones">
+        <option value="primera">Primera Generación</option>
+        <option value="segunda">Segunda Generación</option>
+        <option value="tercera">Tercera Generación</option>
+        <option value="cuarta">Cuarta Generación</option>
+        <option value="quinta">Quinta Generación</option>
+    </select>
 
-<script src="pokemon.js"></script>
+    <!-- Aquí aparecen todas las tarjetas -->
+    <div id="contenido" class="content"></div>
 
+    <!-- Aquí aparece la información del Pokémon al hacer clic -->
+    <div id="detalle"></div>
 
+    <script src="pokemon.js"></script>
 
-
-   
 </body>
 </html>

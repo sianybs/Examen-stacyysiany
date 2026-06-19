@@ -10,6 +10,7 @@ const select = document.getElementById("generaciones");
 const contenido = document.getElementById("contenido");
 const detalle = document.getElementById("detalle");
 
+// cargar primera generación al inicio
 cargarPokemon("primera");
 
 select.addEventListener("change", () => {
@@ -18,14 +19,13 @@ select.addEventListener("change", () => {
 
 async function cargarPokemon(generacion) {
 
-    contenido.innerHTML = "Cargando...";
+    contenido.innerHTML = "";
     detalle.innerHTML = "";
 
     const [inicio, fin] = generaciones[generacion];
 
-    contenido.innerHTML = "";
-
     for (let i = inicio; i <= fin; i++) {
+
         try {
             const respuesta = await fetch(
                 `https://pokeapi.co/api/v2/pokemon/${i}`
@@ -49,6 +49,7 @@ async function cargarPokemon(generacion) {
                 </div>
             `;
 
+            // CLICK FUNCIONA AQUÍ 👇
             tarjeta.addEventListener("click", () => {
                 mostrarDetalle(pokemon);
             });
@@ -56,7 +57,7 @@ async function cargarPokemon(generacion) {
             contenido.appendChild(tarjeta);
 
         } catch (error) {
-            console.log("Error al cargar el Pokémon", i);
+            console.log("Error con Pokémon:", i);
         }
     }
 }
@@ -64,11 +65,11 @@ async function cargarPokemon(generacion) {
 function mostrarDetalle(pokemon) {
 
     const tipos = pokemon.types
-        .map(tipo => tipo.type.name)
+        .map(t => t.type.name)
         .join(", ");
 
     const habilidades = pokemon.abilities
-        .map(habilidad => habilidad.ability.name)
+        .map(h => h.ability.name)
         .join(", ");
 
     detalle.innerHTML = `
