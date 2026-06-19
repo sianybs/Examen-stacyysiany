@@ -1,0 +1,33 @@
+h3{
+font-size: 30px;
+border-color: blue;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+select,option{
+    background-color: darkblue;
+    color: rgb(255, 204, 0);
+}
+div.card{
+    background-color: beige;
+    border-radius: 10px;
+   
+  
+}
+.card{
+     border: 2px solid #ccc; 
+  border-radius: 10px;   
+  padding: 20px;  
+}
+
+.content{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+header{
+     background: linear-gradient(135deg, #04126b 0%, #fddd24 100%);
+    background-attachment: fixed; /* Evita que el fondo se corte al bajar la página */
+    margin: 0;
+}
+
