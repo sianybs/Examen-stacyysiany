@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Equipo - Pokedex</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/pokemon.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" width="300">
+        <hr color="darkblue" size="5">
+        <nav class="menu-principal">
+            <a href="index.html" class="menu-link">Pokédex</a>
+            <a href="entrenadores.html" class="menu-link">Entrenadores</a>
+            <a href="equipos.html" class="menu-link activo">Equipos</a>
+        </nav>
+    </header>
+
+    <h3>Crear Equipo Pokémon</h3>
+
+    <!-- Reutilizamos y adaptamos la clase form-entrenador para consistencia de diseño -->
+    <form id="form-equipo" class="form-entrenador" style="max-width: 500px;">
+
+        <label for="nombre-equipo">Nombre del equipo:</label>
+        <input type="text" id="nombre-equipo" name="nombre" required placeholder="Ej. Equipo Fuego">
+
+        <label for="imagen-equipo">Imagen del grupo (URL):</label>
+        <input type="url" id="imagen-equipo" name="imagen" required placeholder="https://ejemplo.com/foto.jpg">
+
+        <label for="entrenador-select">Entrenador encargado:</label>
+        <select id="entrenador-select" name="entrenador" required>
+            <option value="">Cargando entrenadores...</option>
+        </select>
+
+        <label>Agregar Pokémones (Máximo 6):</label>
+        <div class="buscador-pokemon-contenedor">
+            <input type="text" id="pokemon-busqueda" placeholder="Buscar Pokémon por nombre...">
+            <!-- Sugerencias de búsqueda filtradas -->
+            <div id="sugerencias-pokemon" class="sugerencias-container"></div>
+        </div>
+
+        
+        <div id="pokemons-seleccionados" class="pokemons-seleccionados-grid">
+           
+        </div>
+
+        <div class="botones-formulario">
+            <button type="submit">Guardar Equipo</button>
+            <a href="equipos.html" class="btn-volver">Volver</a>
+        </div>
+
+    </form>
+
+    <script src="js/db.js"></script>
+    <script src="js/nuevo-equipo.js"></script>
+
+</body>
+</html>

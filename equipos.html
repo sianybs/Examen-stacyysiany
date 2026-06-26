@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrenadores - Pokedex</title>
+    <title>Equipos - Pokedex</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/pokemon.css">
 </head>
@@ -15,23 +15,27 @@
         <hr color="darkblue" size="5">
         <nav class="menu-principal">
             <a href="index.html" class="menu-link">Pokédex</a>
-            <a href="entrenadores.html" class="menu-link activo">Entrenadores</a>
-            <a href="equipos.html" class="menu-link">Equipos</a>
+            <a href="entrenadores.html" class="menu-link">Entrenadores</a>
+            <a href="equipos.html" class="menu-link activo">Equipos</a>
         </nav>
     </header>
 
-    <h3>Entrenadores</h3>
+    <h3>Equipos de Pokémon</h3>
 
     <div class="contenedor-boton-nuevo">
-        <a href="formulario.html" class="btn-nuevo">+ Nuevo Entrenador</a>
+        <a href="nuevo-equipo.html" class="btn-nuevo">+ Nuevo Equipo</a>
         <a href="index.html" class="btn-volver">Volver</a>
     </div>
 
-    <div id="lista-entrenadores" class="content"></div>
+    <!-- Contenedor donde se muestran los equipos -->
+    <div id="lista-equipos" class="content"></div>
 
-    <!-- Cargamos db.js antes de entrenadores.js -->
+    <!-- Contenedor flotante para los detalles del equipo -->
+    <div id="detalle"></div>
+
+    <!-- Cargar base de datos y controlador de equipos -->
     <script src="js/db.js"></script>
-    <script src="js/entrenadores.js"></script>
+    <script src="js/equipos.js"></script>
 
 </body>
 </html>

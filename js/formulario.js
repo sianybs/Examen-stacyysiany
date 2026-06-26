@@ -53,11 +53,13 @@ formulario.addEventListener("submit", (evento) => {
         foto: fotoInput.value
     };
 
-    const entrenadores = JSON.parse(localStorage.getItem("entrenadores")) || [];
-    entrenadores.push(nuevoEntrenador);
-    localStorage.setItem("entrenadores", JSON.stringify(entrenadores));
-
-    window.location.href = "entrenadores.html";
+    // Guardamos en IndexedDB en lugar de localStorage
+    agregarEntrenador(nuevoEntrenador).then(() => {
+        window.location.href = "entrenadores.html";
+    }).catch(error => {
+        console.error("Error al guardar entrenador:", error);
+        alert("Hubo un error al guardar el entrenador. Intente de nuevo.");
+    });
 });
 
 window.addEventListener("DOMContentLoaded", cargarGaleria);
