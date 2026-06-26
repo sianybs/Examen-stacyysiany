@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Entrenador - Pokedex</title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/pokemon.css">
 </head>
 
@@ -15,6 +16,7 @@
         <nav class="menu-principal">
             <a href="index.html" class="menu-link">Pokédex</a>
             <a href="entrenadores.html" class="menu-link activo">Entrenadores</a>
+            <a href="equipos.html" class="menu-link">Equipos</a>
         </nav>
     </header>
 
@@ -47,6 +49,8 @@
 
     </form>
 
+    <!-- Cargamos db.js antes de formulario.js -->
+    <script src="js/db.js"></script>
     <script src="js/formulario.js"></script>
 
 </body>
