@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Entrenador - Pokedex</title>
+    <link rel="stylesheet" href="css/pokemon.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" width="300">
+        <hr color="darkblue" size="5">
+        <nav class="menu-principal">
+            <a href="index.html" class="menu-link">Pokédex</a>
+            <a href="entrenadores.html" class="menu-link activo">Entrenadores</a>
+        </nav>
+    </header>
+
+    <h3>Crear Entrenador</h3>
+
+    <form id="form-entrenador" class="form-entrenador">
+
+        <label for="nombre">Nombre y apellidos:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Selecciona...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <label for="residencia">Lugar de residencia:</label>
+        <input type="text" id="residencia" name="residencia" required>
+
+        <label>Elige una foto:</label>
+        <div id="galeria-fotos" class="galeria-fotos"></div>
+        <input type="hidden" id="foto" name="foto">
+
+        <div class="botones-formulario">
+            <button type="submit">Guardar Entrenador</button>
+            <a href="entrenadores.html" class="btn-volver">Volver</a>
+        </div>
+
+    </form>
+
+    <script src="js/formulario.js"></script>
+
+</body>
+</html>

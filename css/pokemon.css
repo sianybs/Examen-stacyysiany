@@ -206,3 +206,187 @@ button{
     text-transform: capitalize;
 }
 
+
+/* ===== Menú principal ===== */
+.menu-principal{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0 0;
+}
+
+.menu-link{
+    color: #fddd24;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.menu-link:hover,
+.menu-link.activo{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ===== Página de Entrenadores ===== */
+.contenedor-boton-nuevo{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-nuevo{
+    display: inline-block;
+    background-color: #04126b;
+    color: #fddd24;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.btn-nuevo:hover{
+    transform: translateY(-3px);
+}
+
+.trainer-card img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.trainer-card h5{
+    margin: 10px 0 5px;
+    color: #04126b;
+}
+
+.sin-entrenadores{
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    padding: 30px;
+}
+
+
+/* ===== Formulario de Entrenador ===== */
+.form-entrenador{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: beige;
+    padding: 25px;
+    border-radius: 10px;
+    gap: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-entrenador label{
+    font-weight: bold;
+    color: #04126b;
+    margin-top: 12px;
+}
+
+.form-entrenador input,
+.form-entrenador select{
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-entrenador button{
+    margin-top: 20px;
+    background-color: #04126b;
+    color: #fddd24;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.form-entrenador button:hover{
+    background-color: #021048;
+}
+
+.galeria-fotos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.foto-opcion{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    background-color: white;
+    object-fit: cover;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.foto-opcion:hover{
+    transform: scale(1.1);
+}
+
+.foto-opcion.seleccionada{
+    border-color: #04126b;
+    box-shadow: 0 0 0 3px #fddd24;
+}
+
+.btn-volver{
+    display: inline-block;
+    background-color: transparent;
+    color: #04126b;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 2px solid #04126b;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-volver:hover{
+    background-color: #04126b;
+    color: #fddd24;
+}
+
+.botones-formulario{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botones-formulario button{
+    margin-top: 0;
+}
+
+.btn-borrar{
+    margin-top: 10px;
+    background-color: #b00020;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-borrar:hover{
+    background-color: #7c0016;
+}
